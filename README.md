@@ -1,5 +1,9 @@
 # Revised Benchmarks using SelfClean
 
+<p align="center">
+  <img  src="http://fabiangroeger.com/wp-content/uploads/2023/09/SelfClean_Teaser.pdf">
+</p>
+
 This repository contains revised versions of benchmark datasets created using the SelfClean data cleaning protocol and expert annotators.
 These revised file lists should be used for model evaluation and pave the way for more trustworthy performance assessment across domains. 
 
