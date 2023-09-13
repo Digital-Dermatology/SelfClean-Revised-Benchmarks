@@ -9,6 +9,24 @@
 This repository contains revised versions of benchmark datasets created using the SelfClean data cleaning protocol and expert annotators.
 These revised file lists should be used for model evaluation and pave the way for more trustworthy performance assessment across domains.
 
+## Revised Benchmarks
+
+Revised file lists include the file names of valid images from the original dataset, excluding irrelevant and near-duplicate samples.
+Label errors are not corrected as this would unfairly favor models similar to the SelfClean encoder, but their prevalence is reported, which can be used to infer the level of performance saturation due to label quality.
+
+### Dermatology
+
+The table below lists the expert-confirmed data quality issues found in six dermatology benchmarks for all three noise types obtained by unanimous expert agreement, also corresponding to the number of rectified issues.
+
+| Dataset | Size  | Irrelevant Samples | Near Duplicates | Label Errors |
+| :---: | :---: | :---: | :---: | :---: | 
+| MED-NODE | 170  | 3 (1.8%) | 1 (0.6%) | 2 (1.2%) |
+| PH2 | 200 | 0 (0.0%) | 0 (0.0%) | 0 (0.0%) |
+| DDI | 656 | 3 (0.5%) | 6 (0.9%) | 8 (1.2%) |
+| Derm7pt | 2,022 | 1 (0.1%) | 9 (0.5%) | 2 (0.1%) |
+| PAD-UFES-20 | 2,298 | 2 (0.1%) | 56 (2.4%) | 3 (0.1%) |
+| SD-128 | 5,619 | 3 (0.1%) | 156 (2.8%) | 4 (0.1%) |
+
 ## Data Cleaning Protocol
 
 The data cleaning protocol that produces the revised benchmarks combines an existing algorithmic cleaning strategy to find candidate issues with an interpretable stopping criterion for efficient annotation.
@@ -32,23 +50,42 @@ After the confirmation process, we conservatively require unanimous expert agree
 Specifically, a sample is considered noise only if all experts flag it as such. 
 We then produce cleaned benchmark datasets by discarding confirmed irrelevant samples and randomly removing a sample for each confirmed pair of near duplicates.
 
-## Revised Benchmarks
+## Repository Structure
 
-### Dermatology
+The repository contains both the revised file lists (`revised_filelists/`) and detailed issue lists (`detailed_issue_lists`).
 
-The table below lists the expert-confirmed data quality issues found in six dermatology benchmarks for all three noise types obtained by unanimous expert agreement.
+Revised file lists consist of file names of valid images, excluding data quality issues.
 
-Revised file lists include the file names of valid images from the original dataset, excluding irrelevant and near-duplicate samples.
-Label errors are not corrected as this would unfairly favor models similar to the SelfClean encoder, but their prevalence is reported, which can be used to infer the level of performance saturation due to label quality.
+```python
+>>> pd.read_csv('revised_filelists/MED-NODE_cleaned_file_list.csv').head()
+                     file_name
+0    MED-NODE/naevus/19085.jpg
+1   MED-NODE/naevus/323418.jpg
+2  MED-NODE/naevus/1697738.jpg
+3  MED-NODE/naevus/2197727.jpg
+4   MED-NODE/naevus/515125.jpg
+```
 
-| Dataset | Size  | Irrelevant Samples | Near Duplicates | Label Errors |
-| :---: | :---: | :---: | :---: | :---: | 
-| MED-NODE | 170  | 3 (1.8%) | 1 (0.6%) | 2 (1.2%) |
-| PH2 | 200 | 0 (0.0%) | 0 (0.0%) | 0 (0.0%) |
-| DDI | 656 | 3 (0.5%) | 6 (0.9%) | 8 (1.2%) |
-| Derm7pt | 2,022 | 1 (0.1%) | 9 (0.5%) | 2 (0.1%) |
-| PAD-UFES-20 | 2,298 | 2 (0.1%) | 56 (2.4%) | 3 (0.1%) |
-| SD-128 | 5,619 | 3 (0.1%) | 156 (2.8%) | 4 (0.1%) |
+For a more detailed analysis of the data quality issues, we provide pickle files of a dict with sample indices for each noise type, which can be read using
+
+```python
+data_quality_issues_list = "detailed_issue_lists/MED-NODE_data_quality_issues.pickle"
+with open(data_quality_issues_list, "rb") as f:
+    data_quality_issues = pickle.load(f)
+    ind_irrelevants = data_quality_issues["IrrelevantSamples"]
+    ind_near_dups = data_quality_issues["NearDuplicates"]
+    ind_lbl_errors = data_quality_issues["LabelErrors"]
+```
+
+and contains, for example
+
+```python
+{
+	'IrrelevantSamples': [84, 76, 13], 
+	'NearDuplicates': [121], 
+	'LabelErrors': [152, 3],
+}
+```
 
 ## References
 
