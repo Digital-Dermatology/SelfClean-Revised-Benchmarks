@@ -1,7 +1,7 @@
 # Revised Benchmarks using SelfClean
 
 <p align="center">
-  <img  src="http://fabiangroeger.com/wp-content/uploads/2023/09/SelfClean_Teaser_Image.png">
+  <img src="assets/SelfClean_Teaser.svg">
 </p>
 
 This repository contains revised versions of benchmark datasets created using the SelfClean data cleaning protocol and expert annotators.
