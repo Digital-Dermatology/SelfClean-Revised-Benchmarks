@@ -4,7 +4,7 @@
   <img src="assets/SelfClean_Teaser.svg">
 </p>
 
-[**SelfClean Paper**](https://arxiv.org/abs/2305.17048) 
+[**SelfClean Paper**](https://arxiv.org/abs/2305.17048) | [**Data Cleaning Protocol Paper**](https://arxiv.org/abs/2309.06961)
 
 This repository contains revised versions of benchmark datasets created using the SelfClean data cleaning protocol and expert annotators.
 These revised file lists should be used for model evaluation and pave the way for more trustworthy performance assessment across domains.
@@ -99,4 +99,10 @@ Please cite the following work if you find this repository useful for your resea
   author       = {Gröger, Fabian and Lionetti, Simone and Gottfrois, Philippe and Gonzalez-Jimenez, Alvaro and Amruthalingam, Ludovic and Consortium, Labelling and Groh, Matthew and Navarini, Alexander A. and Pouly, Marc},
   year         = 2023,
 }
+@misc{groger_towards_2023,
+  title        = {Towards {Reliable} {Dermatology} {Evaluation} {Benchmarks}},
+  author       = {Gröger, Fabian and Lionetti, Simone and Gottfrois, Philippe and Gonzalez-Jimenez, Alvaro and Groh, Matthew and Daneshjou, Roxana and Consortium, Labelling and Navarini, Alexander A. and Pouly, Marc},
+  year         = 2023,
+}
+
 ```
