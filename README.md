@@ -99,10 +99,15 @@ Please cite the following work if you find this repository useful for your resea
   author       = {Gröger, Fabian and Lionetti, Simone and Gottfrois, Philippe and Gonzalez-Jimenez, Alvaro and Amruthalingam, Ludovic and Consortium, Labelling and Groh, Matthew and Navarini, Alexander A. and Pouly, Marc},
   year         = 2023,
 }
-@misc{groger_towards_2023,
-  title        = {Towards {Reliable} {Dermatology} {Evaluation} {Benchmarks}},
-  author       = {Gröger, Fabian and Lionetti, Simone and Gottfrois, Philippe and Gonzalez-Jimenez, Alvaro and Groh, Matthew and Daneshjou, Roxana and Consortium, Labelling and Navarini, Alexander A. and Pouly, Marc},
-  year         = 2023,
+@InProceedings{pmlr-v225-groger23a,
+  title = 	 {Towards Reliable Dermatology Evaluation Benchmarks},
+  author =       {Gr\"oger, Fabian and Lionetti, Simone and Gottfrois, Philippe and Gonzalez-Jimenez, Alvaro and Groh, Matthew and Daneshjou, Roxana and Consortium, Labelling and Navarini, Alexander A. and Pouly, Marc},
+  booktitle = 	 {Proceedings of the 3rd Machine Learning for Health Symposium},
+  pages = 	 {101--128},
+  year = 	 {2023},
+  volume = 	 {225},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {10 Dec},
+  publisher =    {PMLR},
 }
-
 ```
