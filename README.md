@@ -93,11 +93,13 @@ We then produce cleaned benchmark datasets by discarding confirmed irrelevant sa
 Please cite the following work if you find this repository useful for your research or use one of the revised file lists.
 
 ```bib
-@misc{groger_selfclean_2023,
-  title        = {{SelfClean}: {A} {Self}-{Supervised} {Data} {Cleaning} {Strategy}},
+@article{groger_selfclean_2024,
+  title        = {{Intrinsic Self-Supervision for Data Quality Audits}},
   shorttitle   = {{SelfClean}},
-  author       = {Gröger, Fabian and Lionetti, Simone and Gottfrois, Philippe and Gonzalez-Jimenez, Alvaro and Amruthalingam, Ludovic and Consortium, Labelling and Groh, Matthew and Navarini, Alexander A. and Pouly, Marc},
-  year         = 2023,
+  author       = {Gr\"oger, Fabian and Lionetti, Simone and Gottfrois, Philippe and Gonzalez-Jimenez, Alvaro and Amruthalingam, Ludovic and Consortium, Labelling and Groh, Matthew and Navarini, Alexander A. and Pouly, Marc},
+  year         = 2024,
+  month        = 12,
+  journal      = {Advances in Neural Information Processing Systems (NeurIPS)},
 }
 @InProceedings{pmlr-v225-groger23a,
   title = 	 {Towards Reliable Dermatology Evaluation Benchmarks},
